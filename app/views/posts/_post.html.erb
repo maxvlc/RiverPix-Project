@@ -1,12 +1,16 @@
-<div class="post">
-  <div class="post-title">
-    <%= link_to post.title, post_path(post) %>
-  </div>
-  <small class="post-timestamp"><em><%= post.timestamp %></em></small>
-  <div class="post-body">
-    <div class="post-image">
-      <%= image_tag(post.image_url) %>
+<div class="row post">
+  <div class="col-md-3">
+    <div class="post-title">
+      <h1><%= link_to post.title, post_path(post) %></h1>
     </div>
-    <p><%= truncate(strip_tags(post.body), length: 600) %></p>
+    <small class="post-timestamp"><em><%= post.timestamp %></em></small>
+  </div>
+  <div class="col-md-9">
+    <div class="post-body">
+      <div class="post-image">
+        <%= link_to image_tag(post.image_url), (post.image_url), :target => "_blank" %>
+      </div>
+      <p><%= truncate(strip_tags(post.body), length: 300) %></p>
+    </div>
   </div>
 </div>
