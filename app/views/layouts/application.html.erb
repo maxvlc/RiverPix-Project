@@ -25,14 +25,26 @@
   <div class="header">
   	<div class="row" style="margin-top:20px">
   		<div class="header-btn">
-		    
+		    <% if user_signed_in? %>
+        <div class="col-md-9">
+          <span class="signed">
+            <%= link_to 'New Post', new_post_path, :class=>"btn btn-success btn-xs" ,:type=>'button' %> <%= link_to "Sign out",destroy_user_session_path, method: :delete , id: "sign_out", :class=>"btn btn-warning btn-xs" ,:type=>'button'  %> Welcome back <strong><%= current_user.name %></strong> your ID: <strong><%= current_user.id %>!<br></strong>
+          </span>
+        </div>
+      <% else %>
+        <div class="col-md-9">
+          <span class="signed">
+            Login or sign-up:  <%= link_to "Sign in", new_session_path(:user), id: "sign_in" , :class=>"btn btn-success btn-xs" ,:type=>'button' %> <%= link_to "Sign up",new_user_registration_path, id: "sign_up" , :class=>"btn btn-primary btn-xs" ,:type=>'button' %>
+          </span>
+        </div>
+      <% end %>
       <%= link_to 'New Post',new_post_path, :class=>"btn btn-default" ,:type=>'button' %>
 			</div>
   	</div>
   </div><!--/.navbar-collapse -->
 </div>
 
-<p id="notice" class="alert"><%= flash[:notice] %><%= alert %></p>
+<p id="notice" class="alert"><%= flash[:notice] %></p>
 
 <div class="container">
 	<%= yield %>
