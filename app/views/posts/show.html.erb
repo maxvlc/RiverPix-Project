@@ -3,6 +3,7 @@
   <div class="post">
     <p class="post-title">
       <%= @post.title %>
+      <%= social_share_button_tag(@post.title, :url => request.original_url) %>
     </p>
     <div class="my-post">
       <p class="post-image">

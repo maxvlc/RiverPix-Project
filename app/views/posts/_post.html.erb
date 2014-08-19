@@ -4,6 +4,7 @@
       <h1><%= link_to post.title, post_path(post) %></h1>
     </div>
     <small class="post-timestamp"><em><%= post.timestamp %></em></small>
+    <p><%= social_share_button_tag(post.title, :url => "http://www.myapp.com") %></p>
   </div>
   <div class="col-md-9">
     <div class="post-body">
