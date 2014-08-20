@@ -1,29 +1,32 @@
-<div class="show-post">  
-  <p id="notice"><%= notice %></p>
-  <div class="post">
+<p id="notice"><%= notice %></p>
+
+<div class="row post">
+  <div class="col-md-3 post-title">
     <p class="post-title">
-      <%= @post.title %>
-      <%= social_share_button_tag(@post.title, :url => request.original_url) %>
+      <h1><%= @post.title %></h1>
+      <h6>Created by: 
+        <%= @post.name %></h6>
+      <small class="post-timestamp"><em><%= @post.timestamp %></em></small>
+      <div class="show-btns">
+        <%= social_share_button_tag(@post.title, :url => request.original_url) %><br>
+        <%= link_to 'Edit', edit_post_path(@post), :class=>"btn btn-info btn-xs" ,:type=>'button' %>
+        <%= link_to 'Back', posts_path, :class=>"btn btn-default btn-xs" ,:type=>'button' %>
+        <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-default btn-xs" ,:type=>'button'%>
+      </div>
     </p>
-    <div class="my-post">
-      <p class="post-image">
-        <%= image_tag(@post.image_url) %>
-      </p>
-      <p class="post-body">
-        <%= @post.body %>
-      </p>
-    </div>
-     <div class="show-btns">
-      <%= link_to 'Edit', edit_post_path(@post), :class=>"btn btn-info" ,:type=>'button' %>
-      <%= link_to 'Back', posts_path, :class=>"btn btn-default" ,:type=>'button' %>
-      <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-default" ,:type=>'button'%>
-    </div>
   </div>
-  <div class="post-comments">
-    <h2>Comments</h2>
-      <%= render @post.comments %>
-    <h2>Leave your comment:</h2>
-      <%= render 'comments/form' %>
+  <div class="col-md-9">
+    <p class="post-image">
+      <%= image_tag(@post.image_url) %>
+    </p>
+    <p class="post-body">
+      <%= @post.body %>
+    </p>
   </div>
- 
+</div>
+<div class="post-comments">
+  <h2>Comments</h2>
+    <%= render @post.comments %>
+  <h2>Leave your comment:</h2>
+    <%= render 'comments/form' %>
 </div>

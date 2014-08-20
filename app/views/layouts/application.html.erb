@@ -10,44 +10,47 @@
 </head>
 <body>
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="/" style="font-size:40px;margin-top:10px;color:chocolate;">
-    	RiverPix
-    </a>
+<div class="container">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+      <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> -->
+      <a class="header navbar-brand" href="/">
+      	RiverPix
+      </a>
+    </div>
+    <div class="header">
+    	<div class="row">
+    		<div class="">
+  		    <% if user_signed_in? %>
+          <div class="col-md-9">
+            <span class="signed">
+              Welcome back <strong><%= current_user.name %></strong> your ID: <strong><%= current_user.id %>!</strong><br>
+              <%= link_to 'New Post', new_post_path, :class=>"btn btn-success btn-xs" ,:type=>'button' %> <%= link_to "Sign out",destroy_user_session_path, method: :delete , id: "sign_out", :class=>"btn btn-warning btn-xs" ,:type=>'button'  %>
+            </span>
+          </div>
+        <% else %>
+          <div class="col-md-9">
+            <span class="signed">
+              Login or sign-up:  <%= link_to "Sign in", new_session_path(:user), id: "sign_in" , :class=>"btn btn-success btn-xs" ,:type=>'button' %> <%= link_to "Sign up",new_user_registration_path, id: "sign_up" , :class=>"btn btn-primary btn-xs" ,:type=>'button' %>
+            </span>
+          </div>
+        <% end %>
+  			</div>
+    	</div>
+    </div><!--/.navbar-collapse -->
   </div>
-  <div class="header">
-  	<div class="row" style="margin-top:20px">
-  		<div class="header-btn">
-		    <% if user_signed_in? %>
-        <div class="col-md-9">
-          <span class="signed">
-            <%= link_to 'New Post', new_post_path, :class=>"btn btn-success btn-xs" ,:type=>'button' %> <%= link_to "Sign out",destroy_user_session_path, method: :delete , id: "sign_out", :class=>"btn btn-warning btn-xs" ,:type=>'button'  %> Welcome back <strong><%= current_user.name %></strong> your ID: <strong><%= current_user.id %>!<br></strong>
-          </span>
-        </div>
-      <% else %>
-        <div class="col-md-9">
-          <span class="signed">
-            Login or sign-up:  <%= link_to "Sign in", new_session_path(:user), id: "sign_in" , :class=>"btn btn-success btn-xs" ,:type=>'button' %> <%= link_to "Sign up",new_user_registration_path, id: "sign_up" , :class=>"btn btn-primary btn-xs" ,:type=>'button' %>
-          </span>
-        </div>
-      <% end %>
-      <%= link_to 'New Post',new_post_path, :class=>"btn btn-default" ,:type=>'button' %>
-			</div>
-  	</div>
-  </div><!--/.navbar-collapse -->
+
+  <p id="notice" class="alert"></p>
+
+	<%= yield %>
 </div>
 
-<p id="notice" class="alert"></p>
-
-<div class="container">
-	<%= yield %>
+<div class="footer">
 </div>
 
 </body>

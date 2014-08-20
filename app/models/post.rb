@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
+
+	paginates_per 5
 	mount_uploader :image, PostImageUploader
-  paginates_per 5
   has_many :comments, dependent: :destroy
 
   def timestamp
