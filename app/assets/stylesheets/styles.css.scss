@@ -45,6 +45,18 @@ body {
 .post-timestamp {
   text-align: justify;
 }
+.post-comments{
+  background-color:#6d0f14;
+  box-shadow: 5px -2px 5px rgba(0,0,0,0.2);
+  color: #FFFFFF;
+  padding-left: 20px;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding-bottom: 1px;
+}
+.post-comments h2 {
+  color: #446173;
+}
 .row {
   align: center;
 }
@@ -53,4 +65,7 @@ body {
   padding-bottom: 5px;
   margin-top: 15px;
   padding-left: 20px;
+}
+.form-group {
+  color: black;
 }
