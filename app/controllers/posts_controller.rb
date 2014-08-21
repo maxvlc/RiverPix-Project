@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show]
 
   def index
       @posts = Post.order(created_at: :desc).page(params[:page])
@@ -14,6 +14,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.user_id = current_user.id
+    @post.name = current_user.name
   end
 
   def create
@@ -53,8 +55,6 @@ class PostsController < ApplicationController
   private
   def set_post
     @post = Post.find(params[:id])
-    @post.user_id = current_user.id
-    @post.name = current_user.name
   end
 
   def post_params
