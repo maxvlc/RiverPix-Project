@@ -1,17 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<div id="lista">
-  <ul>
-    <li>
-      prueba
-    </li><li>
-      prueba2
-    </li><li>
-      prueba3
-    </li>
-  </ul>
-</div>
-
 <div class="row post">
   <div class="col-md-3 post-title">
     <p class="post-title">
@@ -22,7 +9,7 @@
       <small class="post-timestamp"><em><%= @post.timestamp %></em></small>
       <div class="show-btns">
         <%= social_share_button_tag(@post.title, :url => request.original_url) %><br>
-        <%= link_to 'Edit', edit_post_path(@post), :class=>"btn btn-info btn-xs" ,:type=>'button' %>
+        <%= link_to 'Edit', edit_post_path(@post) if can? :create, User, :class=>"btn btn-info btn-xs" ,:type=>'button' %>
         <%= link_to 'Back', posts_path, :class=>"btn btn-default btn-xs" ,:type=>'button' %>
         <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-default btn-xs" ,:type=>'button'%>
       </div>

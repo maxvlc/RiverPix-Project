@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
 	paginates_per 5
 	mount_uploader :image, PostImageUploader
   has_many :comments, dependent: :destroy
+  belongs_to :user, dependent: :destroy
 
 	validates :title, presence: true, length: { minimum: 5 }
 
