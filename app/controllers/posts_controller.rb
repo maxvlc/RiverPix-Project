@@ -14,12 +14,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.user_id = current_user.id
-    @post.name = current_user.name
   end
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @post.save

@@ -1,9 +1,9 @@
 class Post < ActiveRecord::Base
 
+  has_many :comments, dependent: :destroy
+  belongs_to :user, dependent: :destroy
 	paginates_per 5
 	mount_uploader :image, PostImageUploader
-  has_many :comments, dependent: :destroy
-
 	validates :title, presence: true, length: { minimum: 5 }
 
   def timestamp
