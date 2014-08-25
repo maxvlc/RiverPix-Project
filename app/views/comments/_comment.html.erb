@@ -1,18 +1,17 @@
 <div class="row">
 	<div class="comment">
 		<div class="col-md-3" style align="center">
-			<%= image_tag 'default-avatar.jpg', :class => 'comment-avatar' %><br />
+			<%= avatar_image_url %><br />
 		  <%= comment.commenter %><br />
 		</div>
 		<div class="col-md-3>">
 			<%= comment.timestamp %><br />
 		  <strong>Comment:</strong>
 		  <%= comment.body %>
+			<% if comment.commenter == current_user.name %>
 			<p>
-			<%= link_to 'Delete', [comment.post, comment],
-			             method: :delete,
-			             :class=>'btn btn-warning btn-xs',
-			             data: { confirm: 'Are you sure?' } %>
+				<%= delete_comment_url comment %>
+			<% end %>
 			</p>
 		</div>
 	</div>

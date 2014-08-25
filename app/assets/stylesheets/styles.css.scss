@@ -32,6 +32,9 @@ body {
   background-color:#FFFFFF;
   box-shadow: 5px -2px 5px rgba(0,0,0,0.2);
 }
+.post-title {
+  text-align: justify;
+}
 .post-image img {
   display: block;
   margin-top: 15px;
@@ -79,5 +82,5 @@ body {
   padding-top: 50px;
 }
 #lista ul li {
-      display: inline;
+  display: inline;
 }

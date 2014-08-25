@@ -1,24 +1,26 @@
 <p id="notice"><%= notice %></p>
 <div class="row post">
-  <div class="col-md-3 post-title">
+  <div class="col-md-3">
     <p class="post-title">
       <h1><%= @post.title %></h1>
       <h6>Created by: <br>
-        <%= image_tag @post.user.avatar, class: 'post-avatar' %> <br 7>
+        <%= avatar_image_on_post %> <br 7>
         <strong><%= @post.user.name %></strong>
         </h6>
       <small class="post-timestamp"><em><%= @post.timestamp %></em></small>
       <div class="show-btns">
-        <%= social_share_button_tag(@post.title, :url => request.original_url) %><br>
-        <%= link_to 'Edit', edit_post_path(@post), :class=>"btn btn-info btn-xs" ,:type=>'button' %>
-        <%= link_to 'Back', posts_path, :class=>"btn btn-default btn-xs" ,:type=>'button' %>
-        <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-default btn-xs" ,:type=>'button'%>
+        <%= social_buttons %><br>
+        <% if @post.user_id == current_user.id %>
+          <%= edit_post_button %>
+          <%= delete_post_button %>
+        <% end %>
+        <%= home_button %>
       </div>
     </p>
   </div>
   <div class="col-md-9">
     <p class="post-image">
-      <%= image_tag(@post.image_url) %>
+      <%= post_image_url %>
     </p>
     <p class="post-body">
       <%= @post.body %>

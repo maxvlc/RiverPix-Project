@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
   validates_integrity_of  :avatar
   validates_processing_of :avatar
 
+  def soft_delete
+    update_attribute(:delete_at, Time.current)
+  end
+
 end
