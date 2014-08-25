@@ -1,9 +1,10 @@
 <div class="row post">
   <div class="col-md-3 post-title">
     <h1><%= link_to post.title, post_path(post) %></h1>
-    <h6>Created by: 
-        <%= post.name %><br>
-        </h6>
+    <h6 align="left">
+      <%= image_tag post.user.avatar, class: 'post-avatar' %><br />
+      <strong><%= post.user.name %></strong><br />
+    </h6>
     <small class="post-timestamp"><em><%= post.timestamp %></em></small>
     <p><%= social_share_button_tag(post.title, :url => "http://www.myapp.com") %></p>
     <p>Comments: <%= post.comments_for_post %></p>
