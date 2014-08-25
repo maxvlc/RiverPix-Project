@@ -46,3 +46,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'social-share-button'
 gem 'cancancan', '~> 1.9'
+
+gem 'rails_12factor', group: :production
+
+ruby "2.1.0"

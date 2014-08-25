@@ -78,8 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: riverpix_production
-  username: riverpix
-  password: <%= ENV['RIVERPIX_DATABASE_PASSWORD'] %>
+ production:
+   <<: *default
+#   database: riverpix_production
+#   username: riverpix
+#   password: <%= ENV['RIVERPIX_DATABASE_PASSWORD'] %>
