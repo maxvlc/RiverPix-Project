@@ -10,19 +10,14 @@
       <small class="post-timestamp"><em><%= @post.timestamp %></em></small>
       <div class="show-btns">
         <%= social_buttons %><br>
-        <% if user_signed_in? %>
-          <% if @post.user_id == current_user.id %>
-            <%= edit_post_button %>
-            <%= delete_post_button %>
-          <% end %>
-        <% end %>
+        <%= show_buttons_for_user_actions %>
         <%= home_button %>
       </div>
     </p>
   </div>
   <div class="col-md-9">
     <p class="post-image">
-      <%= post_image_url %>
+      <%= show_post_image %>
     </p>
     <p class="post-body">
       <%= @post.body %>

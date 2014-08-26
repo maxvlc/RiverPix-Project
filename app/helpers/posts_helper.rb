@@ -12,8 +12,8 @@ module PostsHelper
 		social_share_button_tag(@post.title, :url => request.original_url)
 	end
 
-	def post_image_url
-		image_tag(@post.image_url)
+	def social_buttons_on_post post
+		social_share_button_tag(post.title, :url => request.original_url)
 	end
 
 	def show_button
@@ -23,4 +23,37 @@ module PostsHelper
 	def home_button
 		link_to 'Home', posts_path, :class=>"btn btn-default btn-xs" ,:type=>'button'
 	end
+
+	def post_title post
+		link_to post.title, post_path(post)
+	end
+
+	def avatar_user_on_post post
+		image_tag post.user.avatar, class: 'post-avatar'
+	end
+
+	def show_buttons_for_user_actions
+		if user_signed_in?
+      if (@post.user_id == current_user.id)
+        edit_post_button + ' ' + delete_post_button
+      end
+    end
+  end
+
+	def avatar_image_on_post
+		image_tag @post.user.avatar, class: 'post-avatar'
+	end 
+
+	def post_image post
+		link_to image_tag(post.image_url), (post.image_url), :target => "_blank"
+	end
+
+	def show_post_image
+		link_to image_tag(@post.image_url), (@post.image_url), :target => "_blank"
+	end
+
+	def post_body post
+		truncate(strip_tags(post.body), length: 400)
+	end
+
 end

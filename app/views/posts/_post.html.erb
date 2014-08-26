@@ -1,16 +1,16 @@
 <div class="row post">
   <div class="col-md-3 post-title">
-    <h1><%= link_to post.title, post_path(post) %></h1>
+    <h1><%= post_title post %></h1>
     <h6 align="left">
-      <%= image_tag post.user.avatar, class: 'post-avatar' %><br />
+      <%= avatar_user_on_post post %><br />
       <strong><%= post.user.name %></strong><br />
     </h6>
     <small class="post-timestamp"><em><%= post.timestamp %></em></small>
-    <p><%= social_share_button_tag(post.title, :url => "http://www.myapp.com") %></p>
+    <p><%= social_buttons_on_post post %></p>
     <p>Comments: <%= post.comments_for_post %></p>
   </div>
   <div class="col-md-9 post-image">
-    <%= link_to image_tag(post.image_url), (post.image_url), :target => "_blank" %>
-    <p class="post-body"><%= truncate(strip_tags(post.body), length: 400) %></p>
+    <%= post_image post %>
+    <p class="post-body"><%= post_body post %></p>
   </div>
 </div>

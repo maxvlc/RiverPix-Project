@@ -20,10 +20,6 @@ module ApplicationHelper
 		link_to "Sign up",new_user_registration_path, id: "sign_up" , :class=>"btn btn-primary btn-xs" ,:type=>'button'
 	end
 
-	def avatar_image_on_post
-		image_tag @post.user.avatar, class: 'post-avatar'
-	end
-
 	def avatar_image
 		image_tag(current_user.avatar_url, size: "30")
 	end
