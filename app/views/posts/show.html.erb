@@ -4,15 +4,17 @@
     <p class="post-title">
       <h1><%= @post.title %></h1>
       <h6>Created by: <br>
-        <%= avatar_image_on_post %> <br 7>
+        <%= avatar_image_on_post %> <br />
         <strong><%= @post.user.name %></strong>
         </h6>
       <small class="post-timestamp"><em><%= @post.timestamp %></em></small>
       <div class="show-btns">
         <%= social_buttons %><br>
-        <% if @post.user_id == current_user.id %>
-          <%= edit_post_button %>
-          <%= delete_post_button %>
+        <% if user_signed_in? %>
+          <% if @post.user_id == current_user.id %>
+            <%= edit_post_button %>
+            <%= delete_post_button %>
+          <% end %>
         <% end %>
         <%= home_button %>
       </div>
@@ -30,6 +32,6 @@
 <div class="post-comments">
   <h2>Comments</h2>
     <%= render @post.comments %>
-  <h2>Leave your comment:</h2>
+  <h2>Leave your comment <small>(login required)</small></h2>
     <%= render 'comments/form' %>
 </div>

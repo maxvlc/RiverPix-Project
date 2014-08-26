@@ -25,6 +25,11 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
+    <div>
+      <h3>Admin?</h3>
+        <%= f.label :admin %>
+        <%= f.check_box :admin %>
+    </div>
   </div>
   <div class="col-md-6">
     <div>

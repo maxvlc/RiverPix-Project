@@ -46,6 +46,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'social-share-button'
 gem 'cancancan', '~> 1.9'
+gem "mini_magick"
 
 gem 'rails_12factor', group: :production
 

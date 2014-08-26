@@ -1,18 +1,12 @@
 <div class="row">
 	<div class="comment">
 		<div class="col-md-3" style align="center">
-			<%= avatar_image_url %><br />
-		  <%= comment.commenter %><br />
+			<%= avatar_image_on_comment comment %><br />
+		  <%= comment.commenter %><br /><br />
 		</div>
-		<div class="col-md-3>">
-			<%= comment.timestamp %><br />
-		  <strong>Comment:</strong>
-		  <%= comment.body %>
-			<% if comment.commenter == current_user.name %>
-			<p>
-				<%= delete_comment_url comment %>
-			<% end %>
-			</p>
+		<div class="col-md-9" style align="justify" margin-right="30px">
+			On <strong><%= comment.timestamp %></strong> said: <br /><%= comment.body %><br />
+		  <%= show_delete_comment_button comment %>
 		</div>
 	</div>
 </div>

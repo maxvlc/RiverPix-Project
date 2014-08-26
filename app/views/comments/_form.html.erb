@@ -1,11 +1,14 @@
 <div class="row form-group">
   <div class="col-md-3">
-    <%= form_for([@post, @post.comments.build]) do |f| %>
-	    <p style="color:white;">Your Name: <br></p>
-	      <%= f.text_field :commenter, :value => current_user.name, :readonly => true %>
-	    <p style="color:white;">Comment: <br></p>
-	      <%= f.text_area :body, :cols => "50", :rows => "5" %>
-	    <p><%= f.submit :class=>'btn btn-primary btn-xs' %></p>
-    <% end %>
+  	<% if user_signed_in? %>
+	    <%= form_for([@post, @post.comments.build]) do |f| %>
+		    <p style="color:white;">Your Name: <br></p>
+		      <%= f.text_field :commenter, :value => current_user.name, :readonly => true %>
+		    <p style="color:white;">Comment: <br></p>
+		      <%= f.text_area :body, :cols => "50", :rows => "5" %>
+		      <%= f.hidden_field :user_id, :value => current_user.id %>
+		    <p><%= f.submit :class=>'btn btn-primary btn-xs' %></p>
+	    <% end %>
+	  <% end %>
   </div>
 </div>

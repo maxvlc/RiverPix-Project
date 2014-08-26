@@ -11,11 +11,7 @@ module ApplicationHelper
 	def sign_out_button
 		link_to "Sign out",destroy_user_session_path, method: :delete , id: "sign_out", :class=>"btn btn-danger btn-xs" ,:type=>'button'
 	end
-
-	def avatar_image
-		image_tag(current_user.avatar_url, size: "30")
-	end
-
+	
 	def sign_in_button
 		link_to "Sign in", new_session_path(:user), id: "sign_in" , :class=>"btn btn-success btn-xs" ,:type=>'button'
 	end
@@ -26,5 +22,9 @@ module ApplicationHelper
 
 	def avatar_image_on_post
 		image_tag @post.user.avatar, class: 'post-avatar'
+	end
+
+	def avatar_image
+		image_tag(current_user.avatar_url, size: "30")
 	end
 end

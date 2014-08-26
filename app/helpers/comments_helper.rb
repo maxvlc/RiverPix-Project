@@ -1,7 +1,7 @@
 module CommentsHelper
 
-	def avatar_image_url
-		image_tag 'default-avatar.jpg', :class => 'comment-avatar'
+	def avatar_image_on_comment comment
+			image_tag comment.user.avatar, :class => 'comment-avatar'
 	end
 
 	def delete_comment_url comment
@@ -11,7 +11,13 @@ module CommentsHelper
 			             data: { confirm: 'Are you sure?' }
 	end
 
-
+	def show_delete_comment_button comment
+		if user_signed_in?
+		  if comment.commenter == current_user.name
+				delete_comment_url comment
+			end
+		end	
+	end
 
 
 end
