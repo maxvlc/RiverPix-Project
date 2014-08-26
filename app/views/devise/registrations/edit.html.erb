@@ -35,7 +35,7 @@
     <div>
     <% if current_user.avatar.url.present? %>
       Your Avatar: <br />   
-      <%= image_tag(current_user.avatar.url, size: "150", alt: "Edit Entry") %>
+      <%= image_tag(current_user.avatar.url, size: "150", alt: "Edit Entry") %><br />
       <%= f.label :remove_avatar do %>
         <%= f.check_box :remove_avatar  %>
         <% end %>

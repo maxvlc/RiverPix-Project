@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 
-  has_many :comments, dependent: :destroy
-  belongs_to :user, dependent: :destroy
+  has_many :comments
+  belongs_to :user
 	
   paginates_per 5
 	mount_uploader :image, PostImageUploader
