@@ -47,6 +47,7 @@ gem 'devise'
 gem 'social-share-button'
 gem 'cancancan', '~> 1.9'
 gem "mini_magick"
+gem 'redactor-rails'
 
 gem 'rails_12factor', group: :production
 

@@ -53,7 +53,7 @@ module PostsHelper
 	end
 
 	def post_body post
-		truncate(strip_tags(post.body), length: 400)
+		truncate(raw(post.body), length: 400)
 	end
 
 end
