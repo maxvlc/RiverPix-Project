@@ -44,16 +44,19 @@ module PostsHelper
 		image_tag @post.user.avatar, class: 'post-avatar'
 	end 
 
-	def post_image post
-		link_to image_tag(post.image_url), (post.image_url), :target => "_blank"
-	end
+	# Not used after install redactor gem
+
+	# def post_image post
+	# 	link_to image_tag(post.image_url), (post.image_url), :target => "_blank"
+	# end
 
 	def show_post_image
 		link_to image_tag(@post.image_url), (@post.image_url), :target => "_blank"
 	end
 
 	def post_body post
-		truncate(raw(post.body), length: 400)
+		result = post.body
+		result.html_safe
 	end
 
 end

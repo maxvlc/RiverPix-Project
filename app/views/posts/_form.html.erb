@@ -17,15 +17,9 @@
   </div>
   <div class="form-group">
     <%= f.label :body %><br>
-    <%= f.text_area :body ,:class=>'redactor', :rows => 100, :cols => 120 %><br />
+    <%= f.text_area :body ,:class=>'redactor redactor-mine', :rows => 200, :cols => 120 %><br />
   </div>
-  <div class="form-group">
-    <%= f.label 'Image' %><br>
-    <img src="<%= @post.image.url %>" width=80px />
 
-  <div class="form-group">
-    <%= f.file_field :image ,:class=>'form-control'%>
-  </div>
   <div class="actions">
     <%= f.submit :class=>'btn btn-primary btn-xs'%>
   </div>
