@@ -2,7 +2,6 @@
 class RedactorRailsDocumentUploader < CarrierWave::Uploader::Base
   include RedactorRails::Backend::CarrierWave
 
-  # storage :fog
   storage :fog
 
   def store_dir
