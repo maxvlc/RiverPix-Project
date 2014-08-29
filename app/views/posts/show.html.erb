@@ -5,7 +5,8 @@
       <h1><%= @post.title %></h1>
       <h6>Created by: <br>
         <%= avatar_image_on_post %> <br />
-        <strong><%= @post.user.name %></strong>
+        <strong><%= @post.user.name %></strong><br />
+        <%= @post.tag_list %>
         </h6>
       <small class="post-timestamp"><em><%= @post.timestamp %></em></small>
       <div class="show-btns">
@@ -17,9 +18,9 @@
     </p>
   </div>
   <div class="col-md-9">
-<!--     <p class="post-image">
+    <p class="post-image">
       <%= show_post_image %>
-    </p> -->
+    </p>
     <p class="post-body">
       <%= raw @post.body %>
     </p>

@@ -16,8 +16,18 @@
     <%= f.text_field :title ,:class=>'form-control' %>
   </div>
   <div class="form-group">
+    <%= f.label 'Image' %><br>
+    <%= image_tag @post.image_url, size: "150" %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+  <div class="form-group">
     <%= f.label :body %><br>
     <%= f.text_area :body ,:class=>'redactor redactor-mine', :rows => 200, :cols => 120 %><br />
+  </div>
+  <div class="form-group">
+    <%= f.label "Tag List, separated by commas:"   %><br>
+    <%= f.text_field :tag_list ,:class=>'form-control' %>
   </div>
 
   <div class="actions">

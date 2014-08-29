@@ -48,16 +48,20 @@ module PostsHelper
 
 	def avatar_image_on_post
 		image_tag @post.user.avatar, class: 'post-avatar'
-	end 
+	end
 
-	# Not used after install redactor gem
+	def image_url_exist? post
+		result = true
+		result = false if post.image_url.to_s.empty?
+		result
+	end
 
-	# def post_image post
-	# 	link_to image_tag(post.image_url), (post.image_url), :target => "_blank"
-	# end
+	def post_image post
+		(link_to image_tag(post.image_url), (post.image_url), :target => "_blank") if image_url_exist?(post)
+	end
 
 	def show_post_image
-		link_to image_tag(@post.image_url), (@post.image_url), :target => "_blank"
+		link_to image_tag(@post.image_url), (@post.image_url), :target => "_blank" if image_url_exist?(@post)
 	end
 
 	def post_body post
