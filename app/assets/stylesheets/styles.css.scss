@@ -91,5 +91,7 @@ body {
   background: #FFFFFF;
 }
 .redactor_editor {
-  height: 300px;
+  height: 250px;
+  overflow: auto;
+  resize: vertical;
 }

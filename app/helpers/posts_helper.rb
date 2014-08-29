@@ -40,6 +40,12 @@ module PostsHelper
     end
   end
 
+  def show_admin_buttons
+  	if current_user.admin?
+  		edit_post_button + ' ' + delete_post_button
+  	end
+  end
+
 	def avatar_image_on_post
 		image_tag @post.user.avatar, class: 'post-avatar'
 	end 
