@@ -10,8 +10,15 @@
     <p><%= social_buttons_on_post post %></p>
     <p>Comments: <%= post.comments_for_post %></p>
   </div>
-  <div class="col-md-9 post-image">
-    <%= post_image post %>
+  <div class="col-md-9 post-image"> 
+    <div class="image">
+      <div class="image-fixed">
+        <%= post_image post %>
+        <div class="text-over-image">
+          Click to Enlarge
+        </div>
+      </div>
+    </div>
     <p class="post-body"><%= post_body post %></p>
   </div>
 </div>

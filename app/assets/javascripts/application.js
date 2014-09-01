@@ -17,3 +17,12 @@
 //= require jquery.infinitescroll
 //= require redactor-rails
 //= require bootstrap
+
+$(document).ready(function() {
+  $(".image-fixed").on("mouseenter", function() {
+    $(this).animate({"top": "-5px"}, "fast");
+  });
+  $(".image-fixed").on("mouseleave", function() {
+    $(this).animate({"top": "0px"}, "fast");
+  });
+});
