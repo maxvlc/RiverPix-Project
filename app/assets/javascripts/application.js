@@ -16,3 +16,4 @@
 //= require_tree .
 //= require jquery.infinitescroll
 //= require redactor-rails
+//= require bootstrap

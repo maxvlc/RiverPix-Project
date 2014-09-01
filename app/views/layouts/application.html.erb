@@ -7,6 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
  	<%= favicon_link_tag 'favicon.ico' %>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 </head>
 <body>
 
@@ -35,7 +36,7 @@
               <%= sign_out_button  %>
             </span>
             <span class="signed">
-              <%= avatar_image %> 
+              <%= avatar_image %> <br />
             </span>
           </div>
         <% else %>

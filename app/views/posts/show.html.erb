@@ -6,13 +6,16 @@
       <h6>Created by: <br>
         <%= avatar_image_on_post %> <br />
         <strong><%= @post.user.name %></strong><br />
-        <%= @post.tag_list %>
+        <span class="glyphicon glyphicon-tags"></span>  <%= @post.tag_list %>
         </h6>
       <small class="post-timestamp"><em><%= @post.timestamp %></em></small>
       <div class="show-btns">
         <%= social_buttons %><br>
-        <%= show_buttons_for_user_actions %>
-        <%= show_admin_buttons %>
+        <% if current_user.id == 1 %>
+          <%= show_admin_buttons %> 
+        <% else %>
+          <%= show_buttons_for_user_actions %>
+        <% end %>
         <%= home_button %>
       </div>
     </p>

@@ -4,7 +4,7 @@
     <h6 align="left">
       <%= avatar_user_on_post post %><br />
       <strong><%= post.user.name %></strong><br />
-      <%= post.tag_list %>
+      <span class="glyphicon glyphicon-tags"> </span> <%= post.tag_list %>
     </h6>
     <small class="post-timestamp"><em><%= post.timestamp %></em></small>
     <p><%= social_buttons_on_post post %></p>
