@@ -82,7 +82,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 # General Settings
-  config.app_domain = 'http://obscure-anchorage-4039.herokuapp.com/'
+  config.app_domain = 'http://blooming-castle-1119.herokuapp.com/'
 
 # Email
   config.action_mailer.delivery_method = :smtp
