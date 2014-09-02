@@ -61,7 +61,7 @@ module PostsHelper
 	end
 
 	def show_post_image
-		link_to image_tag(@post.image_url), (@post.image_url), :rel => "lightbox", :title => "Image" if image_url_exist?(@post)
+		(link_to image_tag(@post.image_url), (@post.image_url), :rel => "lightbox", :title => "Image") if image_url_exist?(@post)
 	end
 
 	def post_body post
