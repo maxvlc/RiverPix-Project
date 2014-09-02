@@ -6,7 +6,7 @@
   color:chocolate;
 }
 body {
-  background-image: asset-data-url("background.jpg");
+  background-image: url(image-path("background.jpg"));
   background-attachment:fixed;
   background-position:center; 
 }
