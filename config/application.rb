@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Riverpix
   class Application < Rails::Application
-    
+    config.serve_static_assets = true
     # config.assets.paths << "#{Rails}/vendor/assets/fonts"
     
     # Settings in config/environments/* take precedence over those specified here.
