@@ -1,6 +1,6 @@
 /* Preload images */
 body:after {
-  content: image-url(../images/close.png) image-url(../images/loading.gif) image-url(../images/prev.png) image-url(../images/next.png);
+  content: image-url(close.png) image-url(../images/loading.gif) image-url(../images/prev.png) image-url(../images/next.png);
   display: none;
 }
 
@@ -192,7 +192,7 @@ body:after {
   float: right;
   width: 30px;
   height: 30px;
-  background: image-url(../images/close.png) top right no-repeat;
+  background: image-url(close.png) top right no-repeat;
   text-align: right;
   outline: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
