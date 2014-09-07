@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
 
   has_many :comments
   belongs_to :user
-	
+
   paginates_per 10
 	mount_uploader :image, PostImageUploader
 	validates :title, presence: true, length: { minimum: 5 }

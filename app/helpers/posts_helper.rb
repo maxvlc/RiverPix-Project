@@ -24,16 +24,8 @@ module PostsHelper
 		link_to 'Home', posts_path, :class=>"btn btn-default btn-xs" ,:type=>'button'
 	end
 
-	def post_title post
-		link_to post.title, post_path(post)
-	end
-
-	def avatar_user_on_post post
-		image_tag post.user.avatar, class: 'post-avatar'
-	end
-
-	def show_buttons_for_user_actions
-		if user_signed_in?
+  def show_buttons_for_user_actions
+    if user_signed_in?
       if (@post.user_id == current_user.id)
         edit_post_button + ' ' + delete_post_button
       end
@@ -41,10 +33,18 @@ module PostsHelper
   end
 
   def show_admin_buttons
-  	if current_user.admin?
-  		edit_post_button + ' ' + delete_post_button
-  	end
+    if current_user.admin?
+    edit_post_button + ' ' + delete_post_button
+    end
   end
+
+	def post_title post
+		link_to post.title, post_path(post)
+	end
+
+	def avatar_user_on_post post
+		image_tag post.user.avatar, class: 'post-avatar'
+	end
 
 	def avatar_image_on_post
 		image_tag @post.user.avatar, class: 'post-avatar'

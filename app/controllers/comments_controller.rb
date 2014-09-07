@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def identify_current_post
     @post = Post.find(params[:post_id])
   end

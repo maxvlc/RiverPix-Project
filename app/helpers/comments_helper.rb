@@ -16,7 +16,7 @@ module CommentsHelper
 		  if comment.commenter == current_user.name
 				delete_comment_url comment
 			end
-		end	
+		end
 	end
 
 

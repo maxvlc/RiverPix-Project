@@ -8,7 +8,7 @@
 body {
   background-image: url(image-path("background.jpg"));
   background-attachment:fixed;
-  background-position:center; 
+  background-position:center;
 }
 .signed {
   max-width: 980px;
@@ -27,7 +27,7 @@ body {
 .post-avatar {
   max-width: 50px;
 }
-.container { 
+.container {
   max-width: 1000px;
 }
 .post{
@@ -92,7 +92,7 @@ body {
   margin-left: auto;
   margin-right: 10px;
   text-align: center;
-  max-width: 500px;
+  max-width: 300px;
   overflow: auto;
 }
 .image-fixed {

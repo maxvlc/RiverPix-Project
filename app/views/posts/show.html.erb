@@ -11,8 +11,8 @@
       <small class="post-timestamp"><em><%= @post.timestamp %></em></small>
       <div class="show-btns">
         <%= social_buttons %><br>
-        <% if current_user.id == 1 %>
-          <%= show_admin_buttons %> 
+        <% if current_user.id == '1' %>
+          <%= show_admin_buttons %>
         <% else %>
           <%= show_buttons_for_user_actions %>
         <% end %>
