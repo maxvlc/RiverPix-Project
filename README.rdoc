@@ -1,4 +1,4 @@
-=== RiverPix App ===
+ === RiverPix App ===
 You can see the Trello board of this project on: trello.com/b/7SuERbjm/riverpix
 
 With this project, my first on ruby on rails, and I will try to create a board that will display messages ordered from the last posted to the first one like a tumblr.
