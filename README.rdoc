@@ -1,28 +1,16 @@
-== README
+=== RiverPix App ===
+You can see the Trello board of this project on: trello.com/b/7SuERbjm/riverpix
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+With this project, my first on ruby on rails, and I will try to create a board that will display messages ordered from the last posted to the first one like a tumblr.
 
-Things you may want to cover:
+Users will be able to see messages and to add new messages to the board using a form.
 
-* Ruby version
+The info will be stored in a sqlite3 database.
 
-* System dependencies
+Messages will have Title and Body, User Avatar, ShareButtons
 
-* Configuration
+Title must contain a Title of the message and a timestamp.
 
-* Database creation
+Body will be text, image, video or both...
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+…
