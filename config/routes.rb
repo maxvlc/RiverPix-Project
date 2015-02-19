@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  
-  mount RedactorRails::Engine => '/redactor_rails'
-  devise_for :users, :controllers => { :registrations => 'registrations' } 
+
+  root 'posts#index'
+
   resources :posts do
     resources :comments
   end
-  root 'posts#index'
+
+  mount RedactorRails::Engine => '/redactor_rails'
+  devise_for :users, :controllers => { :registrations => 'registrations' }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

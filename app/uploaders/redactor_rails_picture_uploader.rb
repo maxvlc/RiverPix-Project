@@ -1,6 +1,6 @@
 # encoding: utf-8
 class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
-  
+
   include RedactorRails::Backend::CarrierWave
   include CarrierWave::MiniMagick
   storage :fog
@@ -8,7 +8,7 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   def store_dir
     "posts_body/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-  
+
   process :read_dimensions
 
   version :thumb do
@@ -18,11 +18,11 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   version :content do
     process :resize_to_limit => [800, 800]
   end
-  
+
   def extension_white_list
     RedactorRails.image_file_types
   end
-  
+
   # Include RMagick or ImageScience support:
   # include CarrierWave::RMagick
   # include CarrierWave::ImageScience

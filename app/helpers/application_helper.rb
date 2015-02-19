@@ -11,7 +11,7 @@ module ApplicationHelper
 	def sign_out_button
 		link_to "Sign out",destroy_user_session_path, method: :delete , id: "sign_out", :class=>"btn btn-danger btn-xs" ,:type=>'button'
 	end
-	
+
 	def sign_in_button
 		link_to "Sign in", new_session_path(:user), id: "sign_in" , :class=>"btn btn-success btn-xs" ,:type=>'button'
 	end
