@@ -14,3 +14,6 @@ Title must contain a Title of the message and a timestamp.
 Body will be text, image, video or both...
 
 …
+
+bundle install
+
